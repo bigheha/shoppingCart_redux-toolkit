@@ -1,0 +1,47 @@
+.cartItemContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.6rem;
+  background-color: white;
+  padding: 10px;
+}
+
+.amountController {
+  display: flex;
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+
+.controlBtn {
+  font-family: MineHero;
+  font-size: 2rem;
+  border: none;
+  background-color: rgb(255, 162, 80);
+  transition: background-color 500ms;
+  color: white;
+  width: 20px;
+}
+
+.controlBtn:hover {
+  background-color: rgb(194, 123, 61);
+}
+
+.leftBtn {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-right: 1px solid gray;
+}
+
+.rightBtn {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-left: 1px solid grey;
+}
+
+.amount {
+  border: none;
+  width: 40px;
+  text-align: center;
+  appearance: textfield;
+}

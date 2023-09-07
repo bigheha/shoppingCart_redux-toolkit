@@ -1,0 +1,87 @@
+@font-face {
+  font-family: MineBold;
+  src: url(../../assets/fonts/MinecraftBold-nMK1.otf);
+}
+
+.cartContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0px 10px 0px 10px;
+  position: absolute;
+  background-color: rgb(236, 194, 87);
+  border-left: 4px solid rgb(173, 135, 38);
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 25vw;
+}
+
+.cartHeader {
+  font-family: MineBold;
+  display: flex;
+  align-items: center;
+  font-size: 2.4rem;
+  margin-top: 10px;
+}
+
+.closeCartBtn {
+  padding: 2px 4px 1px 6px;
+  margin-right: 10px;
+  font-family: MineBasic;
+  font-size: 1.6rem;
+  color: white;
+  background-color: rgb(218, 20, 20);
+  border: none;
+  transition: background-color 500ms;
+}
+
+.closeCartBtn:hover {
+  background-color: rgb(153, 16, 16);
+}
+
+.cartItems {
+  flex-grow: 1;
+  margin: 10px 0px;
+}
+
+.cartFooter {
+  display: flex;
+  flex-direction: column;
+}
+
+.cartBalance {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.leftover {
+  display: flex;
+  align-items: center;
+}
+
+.emerald {
+  width: 25px;
+}
+
+.confirmBtn {
+  background-color: rgb(44, 124, 44);
+  color: white;
+  transition: background-color 500ms;
+  border: none;
+  font-family: MineBasic;
+  font-size: 2rem;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.confirmBtn:hover {
+  background-color: rgb(26, 84, 26);
+}
+
+.lackOfEmeralds {
+  font-size: 3rem;
+}

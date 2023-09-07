@@ -1,0 +1,30 @@
+@font-face {
+  font-family: MineHero;
+  src: url(./assets/fonts/MinecraftTen-VGORe.ttf);
+}
+
+@font-face {
+  font-family: MineBasic;
+  src: url(./assets/fonts/MinecraftRegular-Bmg3.otf);
+}
+
+:root,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  font-size: 10px;
+  font-family: MineBasic;
+  background-color: rgb(250, 214, 168);
+}
+
+#root {
+  display: grid;
+  grid-template-rows: 50px 1fr;
+}
+
+.itemsContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
