@@ -7,6 +7,7 @@ import CartItem from "../cartItem/CartItem";
 
 export default function ShoppingCart() {
   const cartItems = useAppSelector((state) => state.cart.itemsInCart);
+  const isOpen = useAppSelector((state) => state.cart.isOpen);
   let cartItemsSum = 0;
   for (const item in cartItems) {
     cartItemsSum += cartItems[item].amount * cartItems[item].unitPrice;
@@ -15,7 +16,7 @@ export default function ShoppingCart() {
     useAppSelector((state) => state.balance.currency) - cartItemsSum;
   const dispatch = useAppDispatch();
   return (
-    <div className={styles.cartContainer}>
+    <div className={`${styles.cartContainer} ${isOpen && styles.open}`}>
       <div className={styles.cartHeader}>
         <button
           onClick={() => dispatch(toggleCart())}

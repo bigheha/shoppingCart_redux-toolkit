@@ -15,7 +15,7 @@ const Item: React.FC<itemProps> = ({ props }): JSX.Element => {
         <img src={props.photoUrl} alt={`${props.title} photo`} />
       </div>
       <h1 className={styles.title}>{props.title}</h1>
-      <div className={styles.description}>Makes it possible to catch fish</div>
+      <div className={styles.description}>{props.description}</div>
       <div className={styles.price}>
         {props.price}
         <img src={emerald} className={styles.emerald} />

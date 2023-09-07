@@ -16,6 +16,7 @@ body,
   font-size: 10px;
   font-family: MineBasic;
   background-color: rgb(250, 214, 168);
+  overflow: hidden;
 }
 
 #root {
