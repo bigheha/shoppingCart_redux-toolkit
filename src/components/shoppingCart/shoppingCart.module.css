@@ -5,6 +5,8 @@
 
 .cartContainer {
   display: flex;
+  position: relative;
+  z-index: 2;
   flex-direction: column;
   justify-content: space-between;
   padding: 0px 10px 0px 10px;
