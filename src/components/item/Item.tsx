@@ -1,12 +1,10 @@
 import React from "react";
-import { emerald, itemType } from "../../assets/images/Goods";
+import { emerald } from "../../constants";
 import { useAppDispatch } from "../../store/hooks";
 import { addProduct } from "../../store/slice/cartSlice";
 import styles from "./item.module.css";
+import { itemProps } from "../../constants";
 
-interface itemProps {
-  props: itemType;
-}
 const Item: React.FC<itemProps> = ({ props }): JSX.Element => {
   const dispatch = useAppDispatch();
   return (

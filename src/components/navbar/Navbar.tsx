@@ -1,5 +1,5 @@
 import styles from "./navbar.module.css";
-import { emerald } from "../../assets/images/Goods";
+import { emerald } from "../../constants.ts";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { toggleCart } from "../../store/slice/cartSlice";
 

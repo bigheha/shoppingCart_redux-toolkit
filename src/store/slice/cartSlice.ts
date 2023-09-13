@@ -1,23 +1,7 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { confirmPurchase } from "../globalActions";
-
-export interface CartState {
-  isOpen: boolean;
-  itemsInCart: {
-    [key: string]: {
-      name: string;
-      unitPrice: number;
-      amount: number;
-    };
-  };
-}
-
-export type CartItemType = {
-  name: string;
-  unitPrice: number;
-  amount?: number;
-};
-
+import { CartItemType } from "../../constants";
+import { CartState } from "../../constants";
 const initialState: CartState = {
   isOpen: false,
   itemsInCart: {},

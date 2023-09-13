@@ -1,10 +1,8 @@
-import styles from "./cartBackground.module.css";
+import styles from "./ModalBackground.module.css";
 
 export default function ModalBackground() {
-  return (
-    <div
-      className={styles.cartBackground}
-      onClick={(e) => e.stopPropagation()}
-    ></div>
-  );
+  const handleClick = (event: React.MouseEvent) => {
+    event.stopPropagation();
+  };
+  return <div className={styles.cartBackground} onClick={handleClick}></div>;
 }

@@ -1,13 +1,10 @@
 import styles from "./cartItem.module.css";
-import { CartItemType } from "../../store/slice/cartSlice";
+import { CartItemProps } from "../../constants";
 import { increaseAmount, decreaseAmount } from "../../store/slice/cartSlice";
 import React from "react";
 import { useDispatch } from "react-redux";
 
-interface cartItemProps {
-  props: CartItemType;
-}
-const CartItem: React.FC<cartItemProps> = ({ props }): JSX.Element => {
+const CartItem: React.FC<CartItemProps> = ({ props }): JSX.Element => {
   const dispatch = useDispatch();
   return (
     <div className={styles.cartItemContainer}>
