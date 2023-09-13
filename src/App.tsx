@@ -2,7 +2,7 @@ import Navbar from "./components/navbar/Navbar";
 import Item from "./components/item/Item";
 import ShoppingCart from "./components/shoppingCart/ShoppingCart";
 import GOODS from "./assets/images/Goods";
-import { useAppSelector } from "./state/hooks";
+import { useAppSelector } from "./store/hooks";
 import ModalBackground from "./components/modalBackground/ModalBackground";
 
 function App() {

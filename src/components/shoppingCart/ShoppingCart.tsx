@@ -1,19 +1,24 @@
 import styles from "./shoppingCart.module.css";
-import { clearProducts, toggleCart } from "../../state/slice/cartSlice";
-import { decreaseBalance } from "../../state/slice/balanceSlice";
-import { useAppDispatch, useAppSelector } from "../../state/hooks";
+import { toggleCart } from "../../store/slice/cartSlice";
+import { confirmPurchase } from "../../store/globalActions";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { emerald } from "../../assets/images/Goods";
 import CartItem from "../cartItem/CartItem";
 
 export default function ShoppingCart() {
-  const cartItems = useAppSelector((state) => state.cart.itemsInCart);
   const isOpen = useAppSelector((state) => state.cart.isOpen);
-  let cartItemsSum = 0;
-  for (const item in cartItems) {
-    cartItemsSum += cartItems[item].amount * cartItems[item].unitPrice;
-  }
-  const balance =
-    useAppSelector((state) => state.balance.currency) - cartItemsSum;
+  const cartItems = useAppSelector((state) => state.cart.itemsInCart);
+  let sum = useAppSelector((state) => {
+    let sum = 0;
+    const cartItems = state.cart.itemsInCart;
+
+    for (let item in cartItems) {
+      sum += cartItems[item].unitPrice * cartItems[item].amount;
+    }
+
+    return sum;
+  });
+  const balance = useAppSelector((state) => state.balance.currency - sum);
   const dispatch = useAppDispatch();
   return (
     <div className={`${styles.cartContainer} ${isOpen && styles.open}`}>
@@ -44,8 +49,7 @@ export default function ShoppingCart() {
           <button
             className={styles.confirmBtn}
             onClick={() => {
-              dispatch(decreaseBalance(cartItemsSum));
-              dispatch(clearProducts());
+              dispatch(confirmPurchase(sum));
             }}
           >
             Confirm purchase

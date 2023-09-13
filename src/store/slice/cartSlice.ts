@@ -1,6 +1,7 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { confirmPurchase } from "../globalActions";
 
-export interface cartState {
+export interface CartState {
   isOpen: boolean;
   itemsInCart: {
     [key: string]: {
@@ -11,13 +12,13 @@ export interface cartState {
   };
 }
 
-export type cartItemType = {
+export type CartItemType = {
   name: string;
   unitPrice: number;
   amount?: number;
 };
 
-const initialState: cartState = {
+const initialState: CartState = {
   isOpen: false,
   itemsInCart: {},
 };
@@ -29,7 +30,7 @@ const cartSlice = createSlice({
     toggleCart: (state) => {
       state.isOpen = !state.isOpen;
     },
-    addProduct: (state, action: PayloadAction<cartItemType>) => {
+    addProduct: (state, action: PayloadAction<CartItemType>) => {
       const itemName = action.payload.name;
       if (action.payload.name in state.itemsInCart) {
         state.itemsInCart[`${itemName}`].amount += 1;
@@ -55,6 +56,11 @@ const cartSlice = createSlice({
         delete state.itemsInCart[action.payload];
       }
     },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(confirmPurchase, (state) => {
+      state.itemsInCart = {};
+    });
   },
 });
 

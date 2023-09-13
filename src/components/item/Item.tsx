@@ -1,7 +1,7 @@
 import React from "react";
 import { emerald, itemType } from "../../assets/images/Goods";
-import { useAppDispatch } from "../../state/hooks";
-import { addProduct } from "../../state/slice/cartSlice";
+import { useAppDispatch } from "../../store/hooks";
+import { addProduct } from "../../store/slice/cartSlice";
 import styles from "./item.module.css";
 
 interface itemProps {

@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-
+import { confirmPurchase } from "../globalActions";
 const balanceSlice = createSlice({
   name: "balance",
   initialState: { currency: 100 },
@@ -10,6 +10,11 @@ const balanceSlice = createSlice({
     decreaseBalance: (state, action) => {
       state.currency -= action.payload;
     },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(confirmPurchase, (state, action) => {
+      state.currency -= action.payload;
+    });
   },
 });
 

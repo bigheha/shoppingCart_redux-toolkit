@@ -1,9 +1,9 @@
 import styles from "./navbar.module.css";
 import { emerald } from "../../assets/images/Goods";
-import { useAppDispatch, useAppSelector } from "../../state/hooks";
-import { toggleCart } from "../../state/slice/cartSlice";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { toggleCart } from "../../store/slice/cartSlice";
 
-import { RootState } from "../../state/store";
+import { RootState } from "../../store/store.ts";
 
 export default function Navbar() {
   const balance = useAppSelector((state: RootState) => state.balance.currency);
