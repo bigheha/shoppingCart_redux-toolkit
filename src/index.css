@@ -9,8 +9,7 @@
 }
 
 :root,
-body,
-#root {
+body {
   width: 100%;
   height: 100%;
   font-size: 10px;
@@ -20,6 +19,8 @@ body,
 }
 
 #root {
+  width: 100%;
+  height: 100%;
   display: grid;
   grid-template-rows: 50px 1fr;
 }
